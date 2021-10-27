@@ -3,10 +3,12 @@ import './App.css';
 
 const App = () => {
   const [artists, setArtists] = useState([]);
+  const [album, setAlbums] = useState([]);
   const [searchTerm, setSearchTerm] = useState('Coldplay');
 
   useEffect(() => {
     fetchArtists();
+    fetchAlbums();
   }, []);
 
   // Fetch data
@@ -33,9 +35,32 @@ const App = () => {
     }
   };
 
+  const fetchAlbums = async () => {
+    // const albumUrl = `theaudiodb.com/api/v1/json/${1}/discography.php?s=coldplay`;
+    const albumUrl = `https://theaudiodb.com/api/v1/json/${1}/album.php?i=111239`;
+
+    const response = await fetch(albumUrl);
+    const data = await response.json();
+
+    fetch(albumUrl)
+      .then((response) => {
+        return response.json();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    console.log(data);
+    // console.log(searchTerm);
+
+    if (data.album) {
+      setAlbums(data.album);
+    }
+  };
+
   return (
-    <div className='App'>
-      <header className='App-header'>
+    <div>
+      <header>
         <p>AMASA Music</p>
 
         <div>
@@ -45,6 +70,7 @@ const App = () => {
                 <p>Artist: {artist.strArtist}</p>
                 <p>Country: {artist.strCountry}</p>
                 <p>Genre: {artist.strGenre}</p>
+                <img src={artist.strArtistWideThumb} alt='' />
                 <p>
                   Website:{' '}
                   <a
@@ -68,16 +94,33 @@ const App = () => {
               </div>
             );
           })}
+          {album.map((item) => {
+            return (
+              <div key={item.idAlbum}>
+                <p>Artist: {item.strArtist}</p>
+                <p>Album: {item.strAlbum}</p>
+                <p>Year: {item.intYearReleased}</p>
+                <img src={item.strAlbumThumb} alt='' />
+                <hr />
+              </div>
+            );
+          })}
+
           {/* <p>{searchTerm}</p> */}
         </div>
 
-        {/* {artists.map((artist) => {
-          return (
-            <div>
-              <p>{artist.strArtist}</p>;
-            </div>
-          );
-        })} */}
+        <hr />
+
+        {/* <div>
+          {albums.map((album) => {
+            return (
+              <div key={album.idArtist}>
+                <p>Artist: {album.strArtist}</p>
+                <p>Album: {album.strAlbum}</p>
+              </div>
+            );
+          })}
+        </div> */}
       </header>
     </div>
   );
