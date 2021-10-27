@@ -1,29 +1,34 @@
 import React, { useState, useEffect } from 'react';
+import ArtistResults from './components/ArtistResults';
+import Input from './components/Input';
 import './App.css';
 
 const App = () => {
   const [artists, setArtists] = useState([]);
   const [album, setAlbums] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('Coldplay');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetchArtists();
+    fetchArtists(searchTerm);
     fetchAlbums();
-  }, []);
+  }, [searchTerm]);
 
   // Fetch data
-  const fetchArtists = async () => {
-    // const url = `https://theaudiodb.com/api/v1/json/1/search.php?s=${searchTerm}`;
-    const url = `https://theaudiodb.com/api/v1/json/1/search.php?s=coldplay`;
+  const fetchArtists = async (searchTerm) => {
+    const url = `https://theaudiodb.com/api/v1/json/1/search.php?s=${searchTerm}`;
+    // const url = `https://theaudiodb.com/api/v1/json/1/search.php?s=coldplay`;
 
     const response = await fetch(url);
     const data = await response.json();
 
     fetch(url)
       .then((response) => {
+        setIsLoading(false);
         return response.json();
       })
       .catch((error) => {
+        setIsLoading(false);
         console.log(error);
       });
 
@@ -33,6 +38,8 @@ const App = () => {
     if (data.artists) {
       setArtists(data.artists);
     }
+
+    // return setArtists(data.artists);
   };
 
   const fetchAlbums = async () => {
@@ -50,8 +57,7 @@ const App = () => {
         console.log(error);
       });
 
-    console.log(data);
-    // console.log(searchTerm);
+    // console.log(data);
 
     if (data.album) {
       setAlbums(data.album);
@@ -60,68 +66,26 @@ const App = () => {
 
   return (
     <div>
-      <header>
-        <p>AMASA Music</p>
+      <Input
+        artists={artists}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
+      <ArtistResults artists={artists} isLoading={isLoading} />
 
-        <div>
-          {artists.map((artist) => {
-            return (
-              <div key={artist.idArtist}>
-                <p>Artist: {artist.strArtist}</p>
-                <p>Country: {artist.strCountry}</p>
-                <p>Genre: {artist.strGenre}</p>
-                <img src={artist.strArtistWideThumb} alt='' />
-                <p>
-                  Website:{' '}
-                  <a
-                    href={`https://${artist.strWebsite}`}
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    {artist.strArtist}
-                  </a>
-                </p>
-                <p>
-                  Twitter:{' '}
-                  <a
-                    href={`https://${artist.strTwitter}`}
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    {artist.strArtist}
-                  </a>
-                </p>
-              </div>
-            );
-          })}
-          {album.map((item) => {
-            return (
-              <div key={item.idAlbum}>
-                <p>Artist: {item.strArtist}</p>
-                <p>Album: {item.strAlbum}</p>
-                <p>Year: {item.intYearReleased}</p>
-                <img src={item.strAlbumThumb} alt='' />
-                <hr />
-              </div>
-            );
-          })}
-
-          {/* <p>{searchTerm}</p> */}
-        </div>
-
-        <hr />
-
-        {/* <div>
-          {albums.map((album) => {
-            return (
-              <div key={album.idArtist}>
-                <p>Artist: {album.strArtist}</p>
-                <p>Album: {album.strAlbum}</p>
-              </div>
-            );
-          })}
-        </div> */}
-      </header>
+      {/* <div>
+        {album.map((item) => {
+          return (
+            <div key={item.idAlbum}>
+              <p>Artist: {item.strArtist}</p>
+              <p>Album: {item.strAlbum}</p>
+              <p>Year: {item.intYearReleased}</p>
+              <img src={item.strAlbumThumb} alt='' />
+              <hr />
+            </div>
+          );
+        })}
+      </div> */}
     </div>
   );
 };
