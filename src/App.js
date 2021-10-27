@@ -9,11 +9,25 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    fetchArtists(searchTerm);
-    fetchAlbums();
-  }, [searchTerm]);
+  // useEffect(() => {
+  //   fetchArtists(searchTerm);
+  //   fetchAlbums();
+  // }, [searchTerm]);
 
+  // If nothing is searched, do not fetch and display data
+  useEffect(
+    () => {
+      if (searchTerm) {
+        setIsLoading(true);
+        fetchArtists(searchTerm).then((data) => {
+          setIsLoading(false);
+        });
+      } else {
+        setIsLoading(false);
+      }
+    },
+    [searchTerm] // Only call effect if debounced search term changes
+  );
   // Fetch data
   const fetchArtists = async (searchTerm) => {
     const url = `https://theaudiodb.com/api/v1/json/1/search.php?s=${searchTerm}`;
