@@ -12,8 +12,6 @@ function App() {
         <Switch>
           <Route exact path='/' component={Search} />
           <Route exact path='/artist/:id' component={Artist} />
-
-          {/* <Route component={Error} /> */}
         </Switch>
       </div>
     </Router>
