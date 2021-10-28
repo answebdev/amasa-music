@@ -7,7 +7,9 @@ const Navigation = ({ title }) => {
     <div>
       <Navbar className={classes.NavBar} bg='dark' expand='lg'>
         <Container>
-          <Navbar.Brand className={classes.Nav}>AMASA MUSIC</Navbar.Brand>
+          <Navbar.Brand href='/' className={classes.Nav}>
+            AMASA MUSIC
+          </Navbar.Brand>
         </Container>
       </Navbar>
     </div>

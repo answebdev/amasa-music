@@ -15,32 +15,7 @@ const Artist = ({ match }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  //   const fetchArtist = () => {
-  //     axios
-  //       .get(
-  //         // `https://personal-music-api.herokuapp.com/albums/?id=${match.params.id}`
-  //         `https://theaudiodb.com/api/v1/json/${1}/album.php?i=${match.params.id}`
-  //       )
-
-  //       .then((res) => {
-  //         setData(res.data);
-  //         // console.log(res.data);
-  //       })
-  //       .catch((err) => console.log(err));
-  //   };
-
-  // Non-Axios Version
-  //   async function fetchArtist() {
-  //     const data = await fetch(
-  //       `https://theaudiodb.com/api/v1/json/${1}/album.php?i=${match.params.id}`
-  //     )
-  //       .then((res) => res.json())
-  //       .then((data) => data);
-  //     setData(data);
-  //   }
   const fetchAlbums = async () => {
-    // const albumUrl = `theaudiodb.com/api/v1/json/${1}/discography.php?s=coldplay`;
-    // const albumUrl = `https://theaudiodb.com/api/v1/json/${1}/album.php?i=111239`;
     const albumUrl = `https://theaudiodb.com/api/v1/json/${1}/album.php?i=${
       match.params.id
     }`;
