@@ -72,7 +72,6 @@ const Search = () => {
       });
 
     console.log(data);
-    // console.log(searchTerm);
 
     if (data.artists) {
       setArtists(data.artists);

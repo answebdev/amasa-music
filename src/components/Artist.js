@@ -56,18 +56,16 @@ const Artist = ({ match }) => {
         {album.map((item) => {
           return (
             <div key={item.id}>
-              <div>
-                <img
-                  style={{ width: '25%', height: '25%' }}
-                  src={item.strAlbumThumb}
-                  alt={item.strArtist}
-                />
-                <p>Artist: {item.strArtist}</p>
-                <p>Album: {item.strAlbum}</p>
-                <p>Year: {item.intYearReleased}</p>
-                <p>Genre: {item.strGenre}</p>
-                {/* <p>Review: {item.strReview}</p> */}
-              </div>
+              <img
+                style={{ width: '25%', height: '25%' }}
+                src={item.strAlbumThumb}
+                alt={item.strArtist}
+              />
+              <p>Artist: {item.strArtist}</p>
+              <p>Album: {item.strAlbum}</p>
+              <p>Year: {item.intYearReleased}</p>
+              <p>Genre: {item.strGenre}</p>
+              {/* <p>Review: {item.strReview}</p> */}
             </div>
           );
         })}

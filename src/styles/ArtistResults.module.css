@@ -1,8 +1,34 @@
-.Container {
+.OuterContainer {
   display: flex;
   justify-content: space-around;
 }
+.Container {
+  display: block;
+  padding: 2em;
+  width: 75%;
+}
 
-.MoreBtn {
+/* .MoreBtn {
   background-color: #242834;
+} */
+
+.Link {
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  background-color: #242834;
+  color: #fff;
+  border: 1px solid #242834;
+  text-decoration: none;
+}
+
+.Link:hover {
+  background-color: #fff !important;
+  color: #242834 !important;
+}
+
+.Link:active {
+  background-color: #242834 !important;
+  color: #f7f7f7 !important;
 }
