@@ -13,32 +13,6 @@ const Navigation = ({ title }) => {
         </Container>
       </Navbar>
     </div>
-    // <div>
-    //   <div className='navbar bg-primary'>
-    //     <a href='/'>
-    //       <p className='nav-title'>
-    //         &nbsp;
-    //         {title}
-    //       </p>
-    //     </a>
-    //     {/* <div id='links'>
-    //       <ul>
-    //         <li>
-    //           <Link to='/home'>Home</Link>
-    //         </li>
-    //         <li>
-    //           <Link to='/guides'>Guides</Link>
-    //         </li>
-    //         <li>
-    //           <Link to='/notes'>Notes</Link>
-    //         </li>
-    //         <li>
-    //           <Link to='/contact'>Contact</Link>
-    //         </li>
-    //       </ul>
-    //     </div> */}
-    //   </div>
-    // </div>
   );
 };
 
