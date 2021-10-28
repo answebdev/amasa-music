@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ArtistResults from './ArtistResults';
 import Input from './Input';
+import useDebounce from './utilities/useDebounce';
 import '../App.css';
 
 const Search = () => {
@@ -9,22 +10,48 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  // API search results
+  const [, setResults] = useState([]);
+  // Searching status
+  const [, setIsSearching] = useState(false);
+  // Debounce search term so that it only gives us the latest value
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
   // useEffect(() => {
   //   fetchArtists(searchTerm);
   //   fetchAlbums();
   // }, [searchTerm]);
 
   // If nothing is searched, do not fetch and display data
-  useEffect(() => {
-    if (searchTerm) {
-      setIsLoading(true);
-      fetchArtists(searchTerm).then((data) => {
+  // useEffect(() => {
+  //   if (searchTerm) {
+  //     setIsLoading(true);
+  //     fetchArtists(searchTerm).then((data) => {
+  //       setIsLoading(false);
+  //     });
+  //   } else {
+  //     setIsLoading(false);
+  //   }
+  // }, [searchTerm]);
+
+  useEffect(
+    () => {
+      if (debouncedSearchTerm) {
+        setIsSearching(true);
+        setIsLoading(true);
+        fetchArtists(debouncedSearchTerm).then((data) => {
+          setIsSearching(false);
+          setIsLoading(false);
+          setResults(data);
+        });
+      } else {
+        setResults([]);
+        setIsSearching(false);
         setIsLoading(false);
-      });
-    } else {
-      setIsLoading(false);
-    }
-  }, [searchTerm]);
+      }
+    },
+    [debouncedSearchTerm] // Only call effect if debounced search term changes
+  );
 
   // Fetch data
   const fetchArtists = async (searchTerm) => {

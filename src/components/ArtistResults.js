@@ -63,10 +63,10 @@ const ArtistResults = (props) => {
       <div>
         {props.artists.map((artist) => {
           return (
-            <Row>
+            <Row key={artist.idArtist}>
               <Col md={6}>
-                <div key={artist.idArtist}>
-                  <Card style={{ width: '28rem' }}>
+                <div>
+                  <Card style={{ width: '28rem', marginBottom: '40px' }}>
                     <Card.Img
                       variant='top'
                       src={artist.strArtistWideThumb}
