@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Search from './components/Search';
+import Artist from './components/Artist';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <div className='App'>
         <Switch>
           <Route exact path='/' component={Search} />
+          <Route exact path='/artist/:id' component={Artist} />
           {/* <Route exact path='/artists' component={ArtistList} />
           <Route exact path='/artists/:id' component={Artist} />
           <Route component={Error} /> */}
