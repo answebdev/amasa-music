@@ -15,7 +15,10 @@ const Artist = ({ match }) => {
   }, []);
 
   const fetchAlbums = async () => {
-    const albumUrl = `https://theaudiodb.com/api/v1/json/${1}/album.php?i=${
+    // const albumUrl = `https://theaudiodb.com/api/v1/json/${1}/album.php?i=${
+    //   match.params.id
+    // }`;
+    const albumUrl = `https://theaudiodb.com/api/v1/json/${2}/album.php?i=${
       match.params.id
     }`;
 
