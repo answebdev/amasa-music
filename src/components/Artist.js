@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Spinner from './misc/Spinner';
-import NoImage from '../img/no-album-image-available.webp';
+import PlaceholderImg from '../img/no-album-image-available.webp';
 import { Row, Col, Card, Accordion } from 'react-bootstrap';
 import classes from '../styles/Artist.module.css';
 
@@ -70,7 +70,11 @@ const Artist = ({ match }, props) => {
                     <Card className={classes.MainCard}>
                       <Card.Img
                         variant='top'
-                        src={item.strAlbumThumb ? item.strAlbumThumb : NoImage}
+                        src={
+                          item.strAlbumThumb
+                            ? item.strAlbumThumb
+                            : PlaceholderImg
+                        }
                         alt={item.strArtist}
                       />
                       <Card.Body>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Spinner from './misc/Spinner';
-import NoImage from '../img/no-image-available.webp';
+import PlaceholderImg from '../img/no-image-available.webp';
 import classes from '../styles/ArtistResults.module.css';
 import { Row, Col, Card } from 'react-bootstrap';
 
@@ -35,7 +35,7 @@ const ArtistResults = (props) => {
                           src={
                             artist.strArtistWideThumb
                               ? artist.strArtistWideThumb
-                              : NoImage
+                              : PlaceholderImg
                           }
                           alt={artist.strArtist}
                         />
