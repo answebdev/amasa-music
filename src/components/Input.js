@@ -17,6 +17,14 @@ const Input = (props) => {
                 onChange={(e) => props.setSearchTerm(e.target.value)}
               />
             </InputGroup>
+            {props.isNotFound ? (
+              <div>
+                <p className={classes.ErrorMsg}>
+                  Sorry, we couldn't find anything matching your search
+                  criteria. Please try again.
+                </p>
+              </div>
+            ) : null}
           </Col>
         </Row>
       </div>

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import Spinner from './misc/Spinner';
+import NoImage from '../img/no-album-image-available.webp';
 import { Row, Col, Card, Accordion } from 'react-bootstrap';
 import classes from '../styles/Artist.module.css';
 
-const Artist = ({ match }) => {
+const Artist = ({ match }, props) => {
   const [album, setAlbums] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const history = useHistory();
 
@@ -14,10 +17,18 @@ const Artist = ({ match }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   const fetchAlbums = async () => {
     // const albumUrl = `https://theaudiodb.com/api/v1/json/${1}/album.php?i=${
     //   match.params.id
     // }`;
+    setIsLoading(true);
     const albumUrl = `https://theaudiodb.com/api/v1/json/${2}/album.php?i=${
       match.params.id
     }`;
@@ -35,6 +46,7 @@ const Artist = ({ match }) => {
 
     if (data.album) {
       setAlbums(data.album);
+      setIsLoading(false);
     }
   };
 
@@ -48,6 +60,11 @@ const Artist = ({ match }) => {
 
       <div className={classes.OuterContainer}>
         <div className={classes.Container}>
+          <div>
+            <h1 className={classes.Header}>Albums</h1>
+            {!isLoading ? <div className='text-center'></div> : <Spinner />}
+          </div>
+
           <div className={classes.ArtistStyle}>
             {album.map((item) => {
               return (
@@ -56,7 +73,7 @@ const Artist = ({ match }) => {
                     <Card className={classes.MainCard}>
                       <Card.Img
                         variant='top'
-                        src={item.strAlbumThumb}
+                        src={item.strAlbumThumb ? item.strAlbumThumb : NoImage}
                         alt={item.strArtist}
                       />
                       <Card.Body>
@@ -90,7 +107,7 @@ const Artist = ({ match }) => {
             })}
           </div>
 
-          <div style={{ marginTop: '40px', marginBottom: '40px' }}>
+          {/* <div style={{ marginTop: '40px', marginBottom: '40px' }}>
             <Link
               className={classes.Link}
               to='/'
@@ -104,6 +121,28 @@ const Artist = ({ match }) => {
               ></i>
               &nbsp;Search
             </Link>
+          </div> */}
+
+          <div className={classes.TopParent}>
+            {/* <div style={{ marginTop: '40px', marginBottom: '40px' }}>
+              <Link
+                className={classes.Link}
+                to='/'
+                variant='dark'
+                role='button'
+                aria-pressed='true'
+              >
+                <i
+                  className='fas fa-arrow-left'
+                  onClick={() => history.goBack()}
+                ></i>
+                &nbsp;BACK
+              </Link>
+            </div> */}
+
+            <div onClick={scrollToTop}>
+              <p className={classes.TopButton}>BACK TO TOP</p>
+            </div>
           </div>
         </div>
       </div>

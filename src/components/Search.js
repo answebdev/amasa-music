@@ -8,6 +8,7 @@ const Search = () => {
   const [artists, setArtists] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isNotFound, setIsNotFound] = useState(false);
 
   // API search results
   const [, setResults] = useState([]);
@@ -54,6 +55,11 @@ const Search = () => {
 
     if (data.artists) {
       setArtists(data.artists);
+      setIsNotFound(false);
+    }
+
+    if (!data.artists) {
+      setIsNotFound(true);
     }
   };
 
@@ -63,8 +69,13 @@ const Search = () => {
         artists={artists}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
+        isNotFound={isNotFound}
       />
-      <ArtistResults artists={artists} isLoading={isLoading} />
+      <ArtistResults
+        artists={artists}
+        isLoading={isLoading}
+        isNotFound={isNotFound}
+      />
     </div>
   );
 };

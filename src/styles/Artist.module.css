@@ -3,6 +3,13 @@
   justify-content: space-evenly;
 }
 
+.Header {
+  padding: 1em;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
 .Container {
   display: block;
   padding: 2em;
@@ -19,6 +26,7 @@
 }
 
 .Link {
+  margin: 10px;
   letter-spacing: 1.5px;
   font-size: 1rem;
   padding: 0.5em 1em;
@@ -30,6 +38,31 @@
 }
 
 .Link:hover {
+  background-color: #fff !important;
+  color: #242834 !important;
+}
+
+.TopParent {
+  /* margin: 2em 0; */
+  display: flex;
+  justify-content: center;
+}
+
+.TopButton {
+  margin: 2em 0;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  background-color: #242834;
+  color: #fff;
+  border: 1px solid #242834;
+  text-decoration: none;
+}
+
+.TopButton:hover {
   background-color: #fff !important;
   color: #242834 !important;
 }

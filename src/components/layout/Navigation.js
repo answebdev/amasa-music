@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
-import classes from '../styles/Navigation.module.css';
+import classes from '../../styles/Navigation.module.css';
 
 const Navigation = ({ title }) => {
   return (
