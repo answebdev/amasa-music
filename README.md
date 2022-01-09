@@ -26,6 +26,7 @@ Please check out the live link for iSounds Music here: [iSounds Music](https://i
 * The AudioDB API
 * CSS (CSS Modules)
 * Google Fonts
+* Font Awesome
 * Facebook Developer Tools (Sharing Debugger)
 * Canva
 * Netlify
