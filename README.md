@@ -19,24 +19,22 @@ Please check out the live link for iSounds Music here: [iSounds Music](https://i
 
 ## Technologies Used
 
-* React
-* The Twilight Zone custom-built API
-* Prism
-* CSS (CSS Modules)
-* Flexbox
+* React (Hooks)
+* React Router
 * React Helmet
-* Smoothscroll Polyfill
-* Responsively App
+* React Bootstrap
+* The AudioDB API
+* CSS (CSS Modules)
+* Google Fonts
 * Facebook Developer Tools (Sharing Debugger)
+* Canva
 * Netlify
-* JSON Server (for API)
-* Heroku (for API)
 
 [Back To Top](#Table-of-Contents)
 
 ## Development
 
-The The Twilight Zone API was developed in two phases: API Development and Site Development. In the API Development phase, the actual Twilight Zone API was built, deployed, and tested. In the Site Development phase, the React site was created for the documentation of the API. Details of each phase are described below.
+iSounds Music fetches data from [The AudioDB API](https://www.theaudiodb.com/api_guide.php "The AudioDB API"). Two different endpoints were used: one endpoint to fetch artist details by name, and a second to fetch album details from the artists. Dynamic routing was set up so that when a user goes to an artist's page to view the album information, only that artist's album information will show in its own page with its own route and `id` in the URL. In addition, React Helmet was set up in such a way that the browser tab will display the particular artist's name when the user goes to the artist's album page. For example, if a user searches for Tom Waits, and then goes to Tom Waits's album page, the browser tab will show: "iSounds Music | Albums | Tom Waits".
 
 ### API Development
 
