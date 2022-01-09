@@ -70,7 +70,7 @@ Similarly, an album with no image looks like this on the page:
 
 ![Screenshot 11](screenshots/isoundsmusic-screenshot11.png "Album with No Image")
 
-Again, a ternary operator was used with the imported placehodler image, this time in the `Artist` component:
+Again, a ternary operator was used with the imported placeholder image, this time in the `Artist` component:
 
 ```
 <Card.Img
