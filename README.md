@@ -13,8 +13,6 @@ Please check out the live link for iSounds Music here: [iSounds Music](https://i
 ## Table of Contents
 * [Technologies Used](#Technologies-Used)
 * [Development](#Development)
-  - [API Development](#API-Development)
-  - [Site Development](#Site-Development)
 * [Screenshots](#Screenshots)
 
 ## Technologies Used
