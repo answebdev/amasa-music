@@ -54,11 +54,11 @@ A search result with no image would look like this:
 
 ![Screenshot 09](screenshots/isoundsmusic-screenshot09.png "Search Result with No Image")
 
-I didn't like how it looked when no image was available, so I decided to create my own placeholder images, as stated above. To use the created placeholder image when needed, I imported the image into my `ArtistResults` component, then used a ternary operator where I render the image to conditionally render the placeholder images in the case where no image is available in the API, where `NoImage` is the name given to my imported image:
+I didn't like how it looked when no image was available, so I decided to create my own placeholder images, as stated above. To use the created placeholder image when needed, I imported the image into my `ArtistResults` component, then used a ternary operator where I render the image to conditionally render the placeholder images in the case where no image is available in the API, where `PlaceholderImg` is the name given to my imported image:
 
 ```
 <Card.Img
-  src={ artist.strArtistWideThumb ? artist.strArtistWideThumb : NoImage }
+  src={ artist.strArtistWideThumb ? artist.strArtistWideThumb : PlaceholderImg }
   alt={artist.strArtist}
 />
 ```
@@ -74,7 +74,7 @@ Again, a ternary operator was used with the imported placeholder image, this tim
 
 ```
 <Card.Img
-  src={item.strAlbumThumb ? item.strAlbumThumb : NoImage}
+  src={item.strAlbumThumb ? item.strAlbumThumb : PlaceholderImg}
   alt={item.strArtist}
 />
 ```
