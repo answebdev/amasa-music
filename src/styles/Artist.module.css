@@ -31,19 +31,18 @@
   font-size: 1rem;
   padding: 0.5em 1em;
   border-radius: 4px;
-  background-color: #242834;
+  background-color: #337bb7;
   color: #fff;
-  border: 1px solid #242834;
+  border: 1px solid #337bb7;
   text-decoration: none;
 }
 
 .Link:hover {
   background-color: #fff !important;
-  color: #242834 !important;
+  color: #337bb7 !important;
 }
 
 .TopParent {
-  /* margin: 2em 0; */
   display: flex;
   justify-content: center;
 }
@@ -56,15 +55,15 @@
   font-size: 1rem;
   padding: 0.5em 1em;
   border-radius: 4px;
-  background-color: #242834;
+  background-color: #337bb7;
   color: #fff;
-  border: 1px solid #242834;
+  border: 1px solid #337bb7;
   text-decoration: none;
 }
 
 .TopButton:hover {
   background-color: #fff !important;
-  color: #242834 !important;
+  color: #337bb7 !important;
 }
 
 /* ===== MEDIA QUERIES ===== */
