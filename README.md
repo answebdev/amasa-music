@@ -8,7 +8,7 @@ iSounds Music is an application that allows you to search for artists. The user 
 
 ## The Shoppies Live Link
 
-Please check out the live link for The Shoppies here: [The Shoppies](https://the-shoppies-priceless-kare.netlify.app/ "The Shoppies")
+Please check out the live link for iSounds Music here: [iSounds Music](https://isoundsmusic.netlify.app/ "iSounds Music")
 
 ## Table of Contents
 * [The Challenge](#The-Challenge)
