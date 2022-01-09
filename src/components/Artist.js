@@ -54,7 +54,7 @@ const Artist = ({ match }, props) => {
     <div>
       {album.map((item) => (
         <Helmet>
-          <title key={item.id}>Amasa Music | Albums | {item.strArtist}</title>
+          <title key={item.id}>iSounds Music | Albums | {item.strArtist}</title>
         </Helmet>
       ))}
 

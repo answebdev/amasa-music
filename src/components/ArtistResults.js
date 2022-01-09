@@ -13,7 +13,7 @@ const ArtistResults = (props) => {
   return (
     <div>
       <Helmet>
-        <title>Amasa Music | Search Artists</title>
+        <title>iSounds Music | Search Artists</title>
       </Helmet>
 
       {props.artists.map((artist) => {

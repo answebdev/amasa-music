@@ -1,11 +1,11 @@
 .NavBar {
   background-color: #242834;
+  background-color: #337bb7 !important;
 }
 
 .Nav {
   color: #fff !important;
-  font-family: 'Amatic SC', cursive;
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  font-family: 'PT Serif', serif;
+  font-size: 24px;
+  letter-spacing: 2.5px;
 }

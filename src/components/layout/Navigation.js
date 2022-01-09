@@ -2,22 +2,18 @@ import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 import classes from '../../styles/Navigation.module.css';
 
-const Navigation = ({ title }) => {
+const Navigation = () => {
   return (
     <div>
       <Navbar className={classes.NavBar} bg='dark' expand='lg'>
         <Container>
           <Navbar.Brand href='/' className={classes.Nav}>
-            AMASA MUSIC
+            <i class='fas fa-headphones'></i> iSounds Music
           </Navbar.Brand>
         </Container>
       </Navbar>
     </div>
   );
-};
-
-Navigation.defaultProps = {
-  title: 'AMASA MUSIC',
 };
 
 export default Navigation;
