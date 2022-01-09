@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Spinner from './misc/Spinner';
 import NoImage from '../img/no-album-image-available.webp';
@@ -9,8 +8,6 @@ import classes from '../styles/Artist.module.css';
 const Artist = ({ match }, props) => {
   const [album, setAlbums] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  const history = useHistory();
 
   useEffect(() => {
     fetchAlbums();
@@ -124,22 +121,6 @@ const Artist = ({ match }, props) => {
           </div> */}
 
           <div className={classes.TopParent}>
-            {/* <div style={{ marginTop: '40px', marginBottom: '40px' }}>
-              <Link
-                className={classes.Link}
-                to='/'
-                variant='dark'
-                role='button'
-                aria-pressed='true'
-              >
-                <i
-                  className='fas fa-arrow-left'
-                  onClick={() => history.goBack()}
-                ></i>
-                &nbsp;BACK
-              </Link>
-            </div> */}
-
             <div onClick={scrollToTop}>
               <p className={classes.TopButton}>BACK TO TOP</p>
             </div>

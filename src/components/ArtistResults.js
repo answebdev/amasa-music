@@ -1,4 +1,3 @@
-// import React, { useState } from 'react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -8,8 +7,6 @@ import classes from '../styles/ArtistResults.module.css';
 import { Row, Col, Card } from 'react-bootstrap';
 
 const ArtistResults = (props) => {
-  // const [error] = useState(false);
-
   return (
     <div>
       <Helmet>
@@ -27,13 +24,13 @@ const ArtistResults = (props) => {
                   ) : (
                     <Card className='text-center'>
                       <Card.Header>
-                        <span style={{ fontSize: '26px' }}>
+                        <span className={classes.CardHeader}>
                           <strong>{artist.strArtist}</strong>
                         </span>
                       </Card.Header>
                       <Card.Body>
                         <Card.Img
-                          style={{ width: '80%' }}
+                          className={classes.MainImage}
                           variant='top'
                           src={
                             artist.strArtistWideThumb
@@ -52,7 +49,7 @@ const ArtistResults = (props) => {
                         <Card.Text>
                           <strong>Website: </strong>
                           <a
-                            style={{ textDecoration: 'none' }}
+                            className={classes.WebsiteLink}
                             href={`https://${artist.strWebsite}`}
                             rel='noopener noreferrer'
                             target='_blank'
@@ -79,12 +76,6 @@ const ArtistResults = (props) => {
       })}
 
       {!props.isLoading ? <div className='text-center'></div> : <Spinner />}
-
-      {/* {!props.isLoading && error ? (
-        <div>
-          <p style={{ textAlign: 'center' }}>Oh, no. something went wrong!</p>
-        </div>
-      ) : null} */}
     </div>
   );
 };

@@ -6,7 +6,7 @@ const Navigation = () => {
   return (
     <div>
       <Navbar className={classes.NavBar} bg='dark' expand='lg'>
-        <Container>
+        <Container className={classes.NavContainer}>
           <Navbar.Brand href='/' className={classes.Nav}>
             <i class='fas fa-headphones'></i> iSounds Music
           </Navbar.Brand>
