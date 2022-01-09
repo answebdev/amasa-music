@@ -62,6 +62,7 @@ I didn't like how it looked when there is no image, so I decided to create my ow
   alt={artist.strArtist}
 />
 ```
+The resulting search result with the placeholder image now looks like this:
 
 ![Screenshot 10](screenshots/isoundsmusic-screenshot10.png "Search Result with Placeholder Image")
 
