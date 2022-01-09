@@ -4,7 +4,7 @@
 
 ## Description
 
-iSounds Music is a React application that allows you to search for your favorite artists. The user will then be able to navigate to see the artist's albums, which includes album information, such as album title, year the album was released, an image of the album cover, and more.
+iSounds Music is a React application that allows you to search for your favorite artists. After searching for an artist, the user will be able to navigate to the artist's album page, which includes album information, such as album title, year the album was released, an image of the album cover, and more.
 
 ## iSounds Music Live Link
 
