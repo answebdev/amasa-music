@@ -68,12 +68,6 @@
 
 /* ===== MEDIA QUERIES ===== */
 
-@media screen and (min-width: 981px) and (max-width: 1200px) {
-}
-
-@media screen and (min-width: 769px) and (max-width: 980px) {
-}
-
 @media screen and (min-width: 641px) and (max-width: 768px) {
   .ArtistStyle {
     display: grid;

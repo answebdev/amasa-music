@@ -5,7 +5,7 @@ import PlaceholderImg from '../img/no-album-image-available.webp';
 import { Row, Col, Card, Accordion } from 'react-bootstrap';
 import classes from '../styles/Artist.module.css';
 
-const Artist = ({ match }, props) => {
+const Artist = ({ match }) => {
   const [album, setAlbums] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -107,22 +107,6 @@ const Artist = ({ match }, props) => {
               );
             })}
           </div>
-
-          {/* <div style={{ marginTop: '40px', marginBottom: '40px' }}>
-            <Link
-              className={classes.Link}
-              to='/'
-              variant='dark'
-              role='button'
-              aria-pressed='true'
-            >
-              <i
-                className='fas fa-arrow-left'
-                onClick={() => history.goBack()}
-              ></i>
-              &nbsp;Search
-            </Link>
-          </div> */}
 
           <div className={classes.TopParent}>
             <div onClick={scrollToTop}>
