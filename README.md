@@ -46,12 +46,22 @@ In comparison, you can see the improvement in the Network tab when debouncing is
 ![Screenshot 07](screenshots/withDebouncing.gif "With Debouncing")
 
 ### Placeholder Images
-
-This site was created for the documentation of the custom-built Twilight Zone API and provides all of the information needed to start making HTTP requests, including a set of six common resources that the API comes with. It was built with React and uses Prism for the syntax highlighting. To make the site responsive and mobile-friendly, Flexbox and media queries were used in conjunction with Responsively App. In addition, smoothscroll polyfill was used so that the smooth scroll behavior can be used in browsers that do not support smooth scrolling (e.g., Safari). Finally, after Open Graph meta tags were added, the Facebook Sharing Debugger tool was used to scrape the site so that when the site's URL is posted and shared (e.g., on Facebook), its content will be shown (see last two screenshots below in Screenshots section).
+Placeholder images were created using Canva to act as placeholders in cases were there are no images provided in the API, specifically images used in the search results and for album covers:
 
 ![Screenshot 08](screenshots/isoundsmusic-screenshot08.png "Placeholder Images Created for Application")
 
+A search result with no image would look like this:
+
 ![Screenshot 09](screenshots/isoundsmusic-screenshot09.png "Search Result with No Image")
+
+I didn't like how it looked when there is no image, so I decided to create my own placeholder images, as mentioned above. To use the created placeholder image when needed, I imported the image into my `ArtistResults` component, then used a ternary operator where I render the image to conditionally render the placeholder images in the case that no image is available in the API, where `NoImage` is the name given to my imported image:
+
+```
+<Card.Img
+  src={ artist.strArtistWideThumb ? artist.strArtistWideThumb : NoImage }
+  alt={artist.strArtist}
+/>
+```
 
 ![Screenshot 10](screenshots/isoundsmusic-screenshot10.png "Search Result with Placeholder Image")
 
