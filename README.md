@@ -66,7 +66,20 @@ The resulting search result with the placeholder image now looks like this:
 
 ![Screenshot 10](screenshots/isoundsmusic-screenshot10.png "Search Result with Placeholder Image")
 
+Similarly, an album with no image looks like this on the page:
+
 ![Screenshot 11](screenshots/isoundsmusic-screenshot11.png "Album with No Image")
+
+Again, a ternary operator was used with the imported placehodler image, this time in the `Artist` component:
+
+```
+<Card.Img
+  src={item.strAlbumThumb ? item.strAlbumThumb : NoImage}
+  alt={item.strArtist}
+/>
+```
+
+And the resulting album information looks like this:
 
 ![Screenshot 12](screenshots/isoundsmusic-screenshot12.png "Album with Placeholder Image")
 
