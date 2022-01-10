@@ -21,6 +21,7 @@ Please check out the live link for iSounds Music here: [iSounds Music](https://i
 * React Router
 * React Helmet
 * React Bootstrap
+* Smoothscroll Polyfill
 * The AudioDB API
 * CSS (CSS Modules)
 * Google Fonts
