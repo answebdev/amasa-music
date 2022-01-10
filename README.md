@@ -59,7 +59,7 @@ const scrollToTop = () => {
 };
 ```
 
-Still, not all browsers support smooth scrolling (e.g., Safari). To address this, [smoothscroll polyfill](http://iamdustan.com/smoothscroll/ "smooth scroll behavior polyfill") was used so that the smooth scroll behavior can be used in browsers that do not support smooth scrolling, as in the case with Safari. After installing and importing the polyfill, it was used in `Artist.js`, since this is where the "Back to Top" button is located. The first two lines come from the polyfill documentation and were added inside the `scrollToTop` function, which is called with the `onClick` whenever the "Back to Top" button is clicked:
+Still, not all browsers support smooth scrolling (e.g., Safari). To address this, [smoothscroll polyfill](http://iamdustan.com/smoothscroll/ "smooth scroll behavior polyfill") was used so that the smooth scrolling behavior can be used in browsers that do not support smooth scrolling, as in the case with Safari. After installing and importing the polyfill, it was used in `Artist.js`, since this is where the "Back to Top" button is located. The first two lines come from the polyfill documentation and were added inside the `scrollToTop` function, which is called with the `onClick` whenever the "Back to Top" button is clicked:
 
 ```
 const scrollToTop = () => {
