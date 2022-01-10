@@ -46,6 +46,23 @@ In comparison, you can see the improvement in the Network tab when debouncing is
 
 ![Screenshot 07](screenshots/withDebouncing.gif "With Debouncing")
 
+### Smoothscroll Polyfill
+
+The Albums page containing all of the artist's albums has a "Back to Top" with smooth scrolling. Still, not all browsers support smoth scrolling (e.g., Safari). To address this, [smoothscroll polyfill](http://iamdustan.com/smoothscroll/ "smooth scroll behavior polyfill") was used so that the smooth scroll behavior can be used in browsers that do not support smooth scrolling, as in the case with Safari. After installing and importing the polyfill, it was used in `Artist.js`, since this is where the "Back to Top" button is. The first two lines come from the polyfill documentation and were added inside the `scrollToTop` function, which is called using an `onClick` whenever the "Back to Top" button is clicked:
+
+```
+const scrollToTop = () => {
+  smoothscroll.polyfill();
+  window.scroll({ top: 0, left: 0, behavior: 'smooth' })
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
+```
+
+Before adding these two lines, although the user is able the scroll up in Safari, it would not be a smooth scrolling behavior. However, after adding these lines, the behavior in Safari when clicking on the "Back to Top" button is now smooth.
+
 ### Placeholder Images
 Placeholder images were created using Canva to act as placeholders in cases were there are no images provided in the API, specifically images used in the search results and for album covers:
 
