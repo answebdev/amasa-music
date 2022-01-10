@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import smoothscroll from 'smoothscroll-polyfill';
 import Spinner from './misc/Spinner';
 import PlaceholderImg from '../img/no-album-image-available.webp';
 import { Row, Col, Card, Accordion } from 'react-bootstrap';
@@ -11,6 +12,8 @@ const Artist = ({ match }) => {
 
   useEffect(() => {
     fetchAlbums();
+    smoothscroll.polyfill();
+    window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
