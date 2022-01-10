@@ -12,13 +12,16 @@ const Artist = ({ match }) => {
 
   useEffect(() => {
     fetchAlbums();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     // Polyfill
     smoothscroll.polyfill();
     window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     // Scroll to top of page:
     window.scrollTo(0, 0);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  });
 
   const scrollToTop = () => {
     window.scrollTo({
