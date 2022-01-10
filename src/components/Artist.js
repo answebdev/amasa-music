@@ -19,7 +19,6 @@ const Artist = ({ match }) => {
     // Polyfill
     smoothscroll.polyfill();
     window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-    // Scroll to top of page:
 
     window.scrollTo({
       top: 0,
