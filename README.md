@@ -8,7 +8,7 @@ iSounds Music is a React application that allows you to search for your favorite
 
 ## iSounds Music Live Link
 
-Please check out the live link for iSounds Music here: [iSounds Music](https://isoundsmusic.netlify.app/ "iSounds Music")
+Please check out the live link for iSounds Music here: [iSounds Music](https://amasa-music.netlify.app/ "iSounds Music")
 
 ## Table of Contents
 * [Technologies Used](#Technologies-Used)
