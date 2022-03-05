@@ -8,7 +8,7 @@ const Navigation = () => {
       <Navbar className={classes.NavBar} bg='dark' expand='lg'>
         <Container className={classes.NavContainer}>
           <Navbar.Brand href='/' className={classes.Nav}>
-            <i class='fas fa-headphones'></i> iSounds Music
+            <i class='fas fa-headphones'></i> AMA
           </Navbar.Brand>
         </Container>
       </Navbar>
