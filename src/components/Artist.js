@@ -63,7 +63,9 @@ const Artist = ({ match }) => {
       <div className={classes.OuterContainer}>
         <div className={classes.Container}>
           <div>
-            <h1 className={classes.Header}>Albums</h1>
+            <h1 data-testid='albums' className={classes.Header}>
+              Albums
+            </h1>
             {!isLoading ? <div className='text-center'></div> : <Spinner />}
           </div>
 
@@ -83,22 +85,30 @@ const Artist = ({ match }) => {
                         alt={item.strArtist}
                       />
                       <Card.Body>
-                        <Card.Title>{item.strAlbum}</Card.Title>
-                        <Card.Text>
+                        <Card.Title data-testid='album-title'>
+                          {item.strAlbum}
+                        </Card.Title>
+                        <Card.Text data-testid='album-year'>
                           <strong>Year: </strong>
                           {item.intYearReleased}
                           <br />
-                          <strong>Genre: </strong>
-                          {item.strGenre}
+                          <span data-testid='album-genre'>
+                            <strong>Genre: </strong>
+                            {item.strGenre}
+                          </span>
                           <br />
-                          <strong>Label: </strong>
-                          {item.strLabel}
+                          <span data-testid='album-label'>
+                            <strong>Label: </strong>
+                            {item.strLabel}
+                          </span>
                         </Card.Text>
 
                         <Card.Text>
                           <Accordion defaultActiveKey='1' flush>
                             <Accordion.Item eventKey='0'>
-                              <Accordion.Header>Description</Accordion.Header>
+                              <Accordion.Header data-testid='description'>
+                                Description
+                              </Accordion.Header>
                               <Accordion.Body>
                                 {item.strDescriptionEN}
                               </Accordion.Body>
@@ -115,7 +125,9 @@ const Artist = ({ match }) => {
 
           <div className={classes.TopParent}>
             <div onClick={scrollToTop}>
-              <p className={classes.TopButton}>BACK TO TOP</p>
+              <p data-testid='back-to-top-btn' className={classes.TopButton}>
+                BACK TO TOP
+              </p>
             </div>
           </div>
         </div>

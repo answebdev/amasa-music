@@ -24,7 +24,10 @@ const ArtistResults = (props) => {
                   ) : (
                     <Card className='text-center'>
                       <Card.Header>
-                        <span className={classes.CardHeader}>
+                        <span
+                          data-testid='artist-name'
+                          className={classes.CardHeader}
+                        >
                           <strong>{artist.strArtist}</strong>
                         </span>
                       </Card.Header>
@@ -40,15 +43,16 @@ const ArtistResults = (props) => {
                           alt={artist.strArtist}
                         />
                         <p></p>
-                        <Card.Text>
+                        <Card.Text data-testid='genre'>
                           <strong>Genre:</strong> {artist.strGenre}
                         </Card.Text>
-                        <Card.Text>
+                        <Card.Text data-testid='country'>
                           <strong>Origin:</strong> {artist.strCountry}
                         </Card.Text>
                         <Card.Text>
                           <strong>Website: </strong>
                           <a
+                            data-testid='website-link'
                             className={classes.WebsiteLink}
                             href={`https://${artist.strWebsite}`}
                             rel='noopener noreferrer'
@@ -59,6 +63,7 @@ const ArtistResults = (props) => {
                         </Card.Text>
                         <br />
                         <Link
+                          data-testid='go-to-albums'
                           className={classes.Link}
                           to={`artist/${artist.idArtist}`}
                         >

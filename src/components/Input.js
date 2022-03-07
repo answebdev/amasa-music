@@ -8,9 +8,10 @@ const Input = (props) => {
       <div className={classes.Container}>
         <Row>
           <Col md={12}>
-            <p>Search for your favorite artists</p>
+            <p data-testid='search-text'>Search for your favorite artists</p>
             <InputGroup className='mb-3'>
               <FormControl
+                data-testid='input'
                 type='text'
                 placeholder='Search Artists'
                 value={props.searchTerm}
